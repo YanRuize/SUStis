@@ -1,17 +1,26 @@
 {
   "sid": 12010000,
-  "pwd": "pwd",
+  "pwd": "cas_passwd",
 
   "ele_head": {
-    "p_xktjz": "",
-    "p_gjz": "",
     "p_xn": "2021-2022",
     "p_xq": "1",
     "p_xnxq": "2021-20221",
     "p_dqxn": "2021-2022",
     "p_dqxq": "1",
-    "p_dqxnxq": "2021-20221",
-    "p_xkfsdm": "",
-    "p_id": ""
-  }
+    "p_dqxnxq": "2021-20221"
+  },
+
+  "courses": [
+    {
+      "p_xkfsdm": "xxxk",
+      "p_id": "C451A1AA8EEF9FF2E053CA041H6DB43E",
+      "course_name": "体育（击剑）"
+    },
+    {
+      "p_xkfsdm": "kzyxk",
+      "p_id": "C074AF0DAD49499AE053CA0412ADF2D5",
+      "course_name": "计算机科学导论B"
+    }
+  ]
 }
