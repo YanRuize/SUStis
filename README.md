@@ -1,10 +1,13 @@
 # SUSTech tis退补选抢课
 
 
-> Ver 1.0 只抢一门课的较手动版本（反正我也只掉了一门课XD  
-> 2021-09-03 暂未经过实战测试，待更新  
-> 建议在开始抢课前一两分钟运行脚本，同时自己手动抢课  
-> 
+> Ver 1.0 2021-09-03  
+> 只抢一门课的较手动版本（反正我也只掉了一门课XD  
+> 暂未经过实战测试，待更新  
+>   
+> Ver 1.1 2021-09-04  
+> Now supports electing multiple courses at once
+ 
 > works on python3  
 > package `requests` required  
 > ```
@@ -13,7 +16,7 @@
 
 
 ## USAGE
-
+> 建议在开始抢课前一两分钟运行脚本，同时自己手动抢课  
 1. 将`user.json`里的`sid`和`pwd`改为自己的学号和cas密码
 2. 进入选课界面，找到你要抢的课，点`选课`键
 
@@ -28,8 +31,11 @@
 
 3. 将开发者工具上方的标签页切换至`Network(Fetch/XHR)`，多按几下按钮，最后几条请求应该都是`addGouwuche`  
 ![](./3.png)
-4. 点击请求名字，展开请求信息，`Headers`栏下划到底出现`Form Data`，将其对应的条目填入`user.json`里的`"ele_head"`里同名处（如为空则不用填，但也别删）  
+4. 点击请求名字，展开请求信息，`Headers`栏下划到底出现`Form Data`  
 ![](./4.png)
+    1. 大部分header项目不用管，其中，json文件里`ele_head`里的项目每学期的是统一，填一次即可
+    2. json中的`courses`里保存的是每门课独有的信息，`p_xkfsdm`和`p_id`是headers里的，`course_name`为给自己的备注，选填
+    3. 选多门课只需要把**花括号**及里面的内容复制多份到下方并修改内容即可（注意逗号）
 5. 运行脚本，have fun！
 ```
 python3 /path/to/this/file/tis.py
