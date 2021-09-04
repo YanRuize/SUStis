@@ -36,6 +36,7 @@
     1. 大部分header项目不用管，其中，json文件里`ele_head`里的项目每学期的是统一，填一次即可
     2. json中的`courses`里保存的是每门课独有的信息，`p_xkfsdm`和`p_id`是headers里的，`course_name`为给自己的备注，选填
     3. 选多门课只需要把**花括号**及里面的内容复制多份到下方并修改内容即可（注意逗号）
+    4. 脚本是按json中课程从上到下的顺序抢课的，所以建议把优先度高，较难抢的课放在上面
 5. 运行脚本，have fun！
 ```
 python3 /path/to/this/file/tis.py
