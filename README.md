@@ -34,7 +34,7 @@
 4. 点击请求名字，展开请求信息，`Headers`栏下划到底出现`Form Data`  
 ![](./4.png)
     1. 大部分header项目不用管，其中，json文件里`ele_head`里的项目每学期的是统一，填一次即可
-    2. json中的`courses`里保存的是每门课独有的信息，`p_xkfsdm`和`p_id`是headers里的，`course_name`为给自己的备注，选填
+    2. json中的`courses`里保存的是每门课独有的信息，`p_xkfsdm`和`p_id`是headers里的
     3. 选多门课只需要把**花括号**及里面的内容复制多份到下方并修改内容即可（注意逗号）
 5. 运行脚本，have fun！
 ```
