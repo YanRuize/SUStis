@@ -33,10 +33,10 @@ def login():
     print('Successfully logged in')
 
 
-def qk(courses):
+def qk(courses, try_time=1200):
     trial_cnt = 0
     try:
-        while trial_cnt < 1200:
+        while trial_cnt < try_time:
             trial_cnt += 1
             for course in courses:
                 ele_head.update(course)
