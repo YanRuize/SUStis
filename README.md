@@ -1,13 +1,9 @@
 # SUSTech tis退补选抢课
 
-
-> Ver 1.0 2021-09-03  
-> 只抢一门课的较手动版本（反正我也只掉了一门课XD  
-> 暂未经过实战测试，待更新  
->   
 > Ver 1.1 2021-09-04  
-> Now supports electing multiple courses at once
- 
+> Now supports electing multiple courses at once  
+> **暂未经过实战测试，待更新**  
+>  
 > works on python3  
 > package `requests` required  
 > ```
