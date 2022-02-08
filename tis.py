@@ -33,39 +33,37 @@ def login():
     print('Successfully logged in')
 
 
-def qk(course: dict):
-    ele_head.update(course)
-
-    tis = session.post(ele_url, ele_head)
-    trial_cnt = 1
+def qk(courses, try_time=1200):
+    trial_cnt = 0
     try:
-        while tis.json()['jg'] == '-1' and trial_cnt <= 600:
-            tis = session.post(ele_url, ele_head)
-            print(trial_cnt, tis.json()['message'], sep='\t')
+        while trial_cnt < try_time:
             trial_cnt += 1
-            time.sleep(0.2)
+            for course in courses:
+                ele_head.update(course)
+                tis = session.post(ele_url, ele_head)
+                print(trial_cnt, tis.json()['message'], sep='\t')
+            time.sleep(0.1)
+            print()
+    except KeyboardInterrupt:
+        return
     except:
         print(tis.content)
-    
-    try:
-        print(
-            f'\033[0;33;40m{course.get("course_name")} finished, please check manually in tis\033[0m\n', )
-    except:
-        print(
-            f'\033[0;33;40m{course} finished, please check manually in tis\033[0m\n')
 
 
 if __name__ == '__main__':
-    with open('user.json') as f:
-        info = json.load(f)
-        headers.update({'username': info.get('sid'),
-                        'password': info.get('pwd')})
-        ele_head.update(info.get('ele_head'))
-        courses = info.get('courses')
+    try:
+        with open('user.json') as f:
+            info = json.load(f)
+            headers.update({'username': info.get('sid'),
+                            'password': info.get('pwd')})
+            ele_head.update(info.get('ele_head'))
+            courses = info.get('courses')
 
-    login()
-    for course in courses:
-        qk(course)
+        login()
+        qk(courses)
 
-    print(f'\nAll done, have fun!')
-    session.close()
+        print('\nAll done, have fun!')
+        session.close()
+
+    except Exception as e:
+        print(e)
